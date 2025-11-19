@@ -1,4 +1,7 @@
-//Aim:- To perform infix to postfix 
+//Aim:To convert an infix expression to postfix expression using stack operation.
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -97,4 +100,3 @@ int main()
     free(stack);
     return 0;
 }
-
