@@ -1,54 +1,52 @@
 //Aim:To perform string reverse using stack operation
 #include <stdio.h>
-#include <string.h>
-// Initialize stack variables
-int top = -1; // Stack top pointer starts at -1 (indicating an empty stack)
+#include <stdlib.h>
+
+int top = -1;
 int size;
-char stack[50];
+char *STACK; // Dynamic Array
+
 void push(char item)
 {
     if (top == (size - 1))
     {
-        printf("Stack overflow! Cannot push '%c'.\n", item);
+        printf("Stack is already full, no additional push allowed - Overflow");
     }
     else
     {
-        top = top + 1; // Stack top pointer starts at -1 (indicating an empty stack)
-        stack[top] = item;
+        top = top + 1;
+        STACK[top] = item;
     }
 }
+
 char pop()
 {
-    if (top == -1) // Check if the stack is empty (underflow condition)
-    {
-        printf("Stack underflow!\n");
-        return '\0';
-    }
-    else
-    {
-        char temp = stack[top];
-        top--; // Decrement top to remove the element from the stack
-        return temp;
-    }
+    char temp = STACK[top];
+    top = top - 1;
+    return temp;
 }
+
 int main()
 {
-    printf("Enter the maximum size of string to reverse: ");
+    printf("Enter the size of string to reverse: ");
     scanf("%d", &size);
-    char input[50];// Declare an array to store the input string
-    printf("Enter the string to reverse: ");
-    scanf("%s", input);
-    int len = strlen(input);
-    for (int i = 0; i < len; i++)
+    char input[size];
+    STACK = (char *)malloc(size * sizeof(char));
+
+    printf("Enter the string of size %d to reverse: ", size);
+    scanf("%s", &input);
+
+    for (int i = 0; i <= size - 1; i++)
     {
         push(input[i]);
     }
-    printf("Reversed string is: ");
-    for (int i = 0; i < len; i++)
+
+    printf("Reversed string is - \n");
+    for (int i = 0; i <= size - 1; i++)
     {
         printf("%c", pop());
     }
-    printf("\n");// Print a newline after the reversed string
-    return 0;
 }
+}
+
 
