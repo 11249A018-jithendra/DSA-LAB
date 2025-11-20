@@ -1,8 +1,10 @@
 //AIM: To find the required element in linear Search/
+
+
 #include <stdio.h>
 int main()
 {
-    //// Declare an array of size 10, a variable for the key, and variables for loop and size
+    // Declare an array of size 10, a variable for the key, and variables for loop and size
     int a[10], key, i, n;
     //user to enter the size of the array
     printf("Enter the size of array:\n");
@@ -26,4 +28,5 @@ int main()
     printf("\nElement is not found in the array\n");
     return 0;
 }
+
 
