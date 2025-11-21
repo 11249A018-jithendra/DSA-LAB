@@ -1,7 +1,4 @@
-//Aim:
-To write a C program to perform all operations on a Doubly Linked List, including insertion 
-(beginning, position, end), deletion (beginning, position, end, by value), searching, and
-is playing the list in forward and backward directions.
+//Aim:To write a C program to perform all operations on a Doubly Linked List, including insertion (beginning, position, end), deletion (beginning, position, end, by value), searching, and is playing the list in forward and backward directions.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -234,4 +231,3 @@ int main() {
         }
     }
 }
-
