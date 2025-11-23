@@ -1,10 +1,16 @@
+//Aim: To implement Merge Sort 
 #include <stdio.h>
+
+// Merge two sorted subarrays
 void merge(int arr[], int left, int mid, int right)
 {
-    int i = left;        // pointer for left half
+    int i = left;
     int j = mid + 1;
-    int k = 0;           // pointer for temp array
+    int k = 0;
+
     int temp[right - left + 1];
+
+    // Merge logic
     while (i <= mid && j <= right)
     {
         if (arr[i] < arr[j])
@@ -12,24 +18,28 @@ void merge(int arr[], int left, int mid, int right)
         else
             temp[k++] = arr[j++];
     }
-    // Copy remaining elements from the left half (if any)
+
+    // Copy left-out elements
     while (i <= mid)
         temp[k++] = arr[i++];
+
     while (j <= right)
         temp[k++] = arr[j++];
-    // Move merged elements back into the original array
+
+    // Copy temp back to original
     for (i = left, k = 0; i <= right; i++, k++)
         arr[i] = temp[k];
 }
+
+// Merge Sort function
 void mergeSort(int arr[], int left, int right)
 {
     if (left < right)
     {
-        int mid = (left + right) / 2; 
-
-        mergeSort(arr, left, mid);     
-        mergeSort(arr, mid + 1, right); // sort right section
-        merge(arr, left, mid, right); 
+        int mid = (left + right) / 2;
+        mergeSort(arr, left, mid);      // Left part
+        mergeSort(arr, mid + 1, right); // Right part
+        merge(arr, left, mid, right);   // Merge halves
     }
 }
 
@@ -52,4 +62,3 @@ int main()
 
     return 0;
 }
-
