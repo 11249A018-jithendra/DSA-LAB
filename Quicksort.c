@@ -1,41 +1,40 @@
+//Aim: To implement Quick sort.
 #include <stdio.h>
 
-// Swap two numbers using pointers (changes persist in the original array)
+//Swap the numbers / Call by referene to persist changes
 void swap(int *a, int *b)
 {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
-// and arranges smaller elements to the left, larger to the right
+
+// Partition 
 int partition(int list[], int low, int high)
 {
-    int pivot = list[high];  // choosing the last element as pivot
-    int i = low - 1;         // index of the smaller element
+    int pivot = list[high];
+    int i = low - 1;
 
     for (int j = low; j < high; j++)
     {
-        // If current element is smaller than the pivot
         if (list[j] < pivot)
         {
             i++;
-            swap(&list[i], &list[j]); 
+            swap(&list[i], &list[j]);
         }
     }
-    // Place pivot in correct position
     swap(&list[i + 1], &list[high]);
     return i + 1;
 }
 
-// Recursive Quick Sort function
+// Quick Sort function
 void quickSort(int list[], int low, int high)
 {
     if (low < high)
     {
-        int pi = partition(list, low, high);  
-
-        quickSort(list, low, pi - 1); 
-        quickSort(list, pi + 1, high); 
+        int pi = partition(list, low, high);
+        quickSort(list, low, pi - 1);
+        quickSort(list, pi + 1, high);
     }
 }
 
@@ -58,4 +57,3 @@ int main()
 
     return 0;
 }
-
