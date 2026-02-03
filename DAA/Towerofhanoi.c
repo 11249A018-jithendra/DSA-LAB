@@ -1,3 +1,6 @@
+//Aim:Implementation of tower of hanoi using recursion.
+
+//program:
 #include<stdio.h>
 
 void towerofhanoi(int n,char s,char d,char a)
@@ -19,4 +22,5 @@ int main()
     printf("reqired moves:\n");
     towerofhanoi(disk_count,'s','d','a');
 }
+
 
