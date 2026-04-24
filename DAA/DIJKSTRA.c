@@ -1,3 +1,6 @@
+//Aim:To implement Dijkstra’s Algorithm in order to find the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edge weights.
+
+//program:
 #include <stdio.h>
 #define V 5
 #define INF 999999
