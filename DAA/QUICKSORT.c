@@ -1,3 +1,6 @@
+//Aim:To implement a Randomized Quicksort algorithm to sort a list of elements efficiently by selecting a random pivot and applying the divide-and-conquer technique.
+
+//program:
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
