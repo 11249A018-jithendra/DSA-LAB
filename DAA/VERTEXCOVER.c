@@ -1,3 +1,6 @@
+//Aim:To implement an approximation algorithm for the Vertex Cover problem that finds a near-optimal set of vertices covering all edges in a graph.
+
+//program:
 #include <stdio.h>
 #define V 5   // Total number of vertices
 /* Greedy function to find an approximate Vertex Cover
